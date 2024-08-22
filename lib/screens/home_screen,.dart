@@ -8,12 +8,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int tasksAdded = 0;
+  bool activePage = true;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       body: Stack(
         children: [
+          if (tasksAdded == 0)
           Container(
             margin: const EdgeInsets.all(50.0),
             height: 100.0,
@@ -21,7 +24,7 @@ class _HomePageState extends State<HomePage> {
             child: const Align(
               alignment: Alignment.topCenter,
               child: Text(
-                'No Tasks Added',
+                'No Tasks Due',
                 style: TextStyle(
                   fontSize: 30.0,
                 ),
@@ -40,13 +43,13 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: BottomAppBar(
         height: 60.0,
-        color: Colors.deepPurpleAccent,
+        color: Colors.grey[900],
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.home, color: Colors.white),
+              icon:  Icon(Icons.home, color: activePage? Colors.deepPurpleAccent : Colors.white),
             ),
             IconButton(onPressed: () {},
                 icon: const Icon(Icons.search, color: Colors.white)
