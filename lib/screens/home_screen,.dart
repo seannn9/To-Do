@@ -10,6 +10,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int tasksAdded = 0;
   bool activePage = true;
+  void addTask() {
+
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -37,7 +41,7 @@ class _HomePageState extends State<HomePage> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100.0)),
         backgroundColor: Colors.deepPurple,
         onPressed: () {
-    
+          addTask();
         },
         child: const Icon(Icons.add),
       ),
@@ -48,7 +52,8 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+              },
               icon:  Icon(Icons.home, color: activePage? Colors.deepPurpleAccent : Colors.white),
             ),
             IconButton(onPressed: () {},
